@@ -29,4 +29,4 @@ st.altair_chart(chart, use_container_width=True)
 
 
 with st.sidebar:
-    st.title("visualisation")
+    st.title('visualisation')
