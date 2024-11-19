@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd 
 import altair as alt
+import time
 
 # Charger les données
 data = pd.read_csv('Iris.csv', delimiter=";") 
@@ -25,6 +26,13 @@ with st.sidebar:
 #affiche la chart sur streamlit
 st.altair_chart(chart, use_container_width=True)
 
+
+
 with st.sidebar:
-    st.[st.title("Dashboard Streamlit")]
+    with st.echo():
+        st.write("This code will be printed to the sidebar.")
+
+    with st.spinner("Loading..."):
+        time.sleep(5)
+    st.success("Done!")
 
