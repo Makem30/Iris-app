@@ -26,5 +26,5 @@ with st.sidebar:
 st.altair_chart(chart, use_container_width=True)
 
 with st.sidebar:
-    st.[element_name]
+    st.[st.title("Dashboard Streamlit")]
 
