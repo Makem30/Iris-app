@@ -22,3 +22,5 @@ chart = alt.Chart(data).mark_point().encode(x='SepalLength' , y='PetalWidth')
 #affiche la chart sur streamlit
 st.altair_chart(chart, use_container_width=True)
 
+st.sidebar.[element_name]
+
