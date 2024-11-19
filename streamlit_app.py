@@ -28,4 +28,13 @@ st.altair_chart(chart, use_container_width=True)
 
 
 
-st.sidebar.title("visualisation")
+st.sidebar.title("Sidebar")
+
+# Add widgets to the sidebar
+option = st.sidebar.selectbox(
+    "Select an option:",
+    ["Option iris", "Option data", "Option github"]
+)
+
+# Display selected option
+st.write(f"You selected: {option}")
