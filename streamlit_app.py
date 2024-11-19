@@ -25,5 +25,6 @@ with st.sidebar:
 #affiche la chart sur streamlit
 st.altair_chart(chart, use_container_width=True)
 
-st.sidebar.[st.title("Dashboard Streamlit")]
+with st.sidebar:
+    st.[element_name]
 
