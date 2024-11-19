@@ -37,5 +37,3 @@ option = st.sidebar.selectbox(
 # Display selected option
 st.write(f"You selected: {option}")
 
-# Display selected option
-st.write(f"You selected: {option}")
