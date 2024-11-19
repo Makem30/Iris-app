@@ -9,15 +9,15 @@ st.title("Mon premier tableau de bord Streamlit")
 #Afficher les données dans un tableau
 #st.table(data)
 #Affichage des 5 premières lignes du jeu de doonnées
-st.write(data.head())
+#st.write(data.head())
 
 #creer un chart altair
-chart = alt.Chart(data).mark_bar().encode(x='SepalLegth' , y='SepalWidth')
+chart = alt.Chart(data).mark_bar().encode(x='SepalLength' , y='SepalWidth')
 
 #afficher le chart sur streamlit
 st.altair_chart(chart, use_container_width=True)
 
-chart = alt.Chart(data).mark_point().encode(x='SepalLegth' , y='SepalWidth')
+chart = alt.Chart(data).mark_point().encode(x='SepalLength' , y='PetalWidth')
 
 #affiche la chart sur streamlit
 st.altair_chart(chart, use_container_width=True)
