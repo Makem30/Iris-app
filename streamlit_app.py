@@ -45,15 +45,15 @@ import streamlit as st
 with st.sidebar:
     st.title('Dashboard')
 
-col = st.columns((1.5,4.5,2), gap = 'medium')
-with col[0]:
+# col = st.columns((1.5,4.5,2), gap = 'medium')
+# with col[0]:
     st.markdown('diagramme secteur')
     
     # Créer le diagramme sectoriel
 pie_chart = alt.Chart(data).mark_arc().encode(
     theta='count:Q',
-    color='species:N',
-    tooltip=['species:N', 'count:Q']
+    color='Species:N',
+    tooltip=['Species:N', 'count:Q']
 ).properties(
     title='Distribution des espèces dans le jeu de données Iris',
     width=400,
