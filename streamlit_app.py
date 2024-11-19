@@ -14,4 +14,4 @@ st.write(data.head())
 
 # Assuming you have a Pandas DataFrame 'df' with data for your scatter plot
 fig = px.scatter(df, x="SepalLength", y="PetalWidth", color="Species")
-st.plotly_chart(fig)
+st.plotly_chart(data)
