@@ -50,11 +50,7 @@ with st.sidebar:
     st.markdown('diagramme secteur')
     
     # Créer le diagramme sectoriel
-pie_chart = alt.Chart(data).mark_arc().encode(
-    theta='count:Q',
-    color='Species:N',
-    tooltip=['Species:N', 'count:Q']
-).properties(
+pie_chart = alt.Chart(data).mark_arc().encode(x='SepalLength' , y='SepalWidth').properties(
     title='Distribution des espèces dans le jeu de données Iris',
     width=400,
     height=400
