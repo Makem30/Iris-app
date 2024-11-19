@@ -20,14 +20,12 @@ st.altair_chart(chart, use_container_width=True)
 
 chart = alt.Chart(data).mark_point().encode(x='SepalLength' , y='PetalWidth')
 
-with st.sidebar:
-    st.[element_name]
+import streamlit as st
 
-#affiche la chart sur streamlit
-st.altair_chart(chart, use_container_width=True)
+# Title for the main app
+st.title("Main App Area")
 
-
-
+# Title for the sidebar
 st.sidebar.title("Sidebar")
 
 # Add widgets to the sidebar
@@ -35,6 +33,9 @@ option = st.sidebar.selectbox(
     "Select an option:",
     ["Option iris", "Option data", "Option github"]
 )
+
+# Display selected option
+st.write(f"You selected: {option}")
 
 # Display selected option
 st.write(f"You selected: {option}")
