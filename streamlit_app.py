@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd 
-import plotly.express as px
+
 # Charger les données
 data = pd.read_csv('Iris.csv', delimiter=";") 
 #Créer un titre
@@ -11,7 +11,5 @@ st.title("Mon premier tableau de bord Streamlit")
 st.write(data.head())
 
 
+st.write(sn.countplot(df, x="SepalWidth", hue="Species"))
 
-# Assuming you have a Pandas DataFrame 'df' with data for your scatter plot
-fig = px.scatter(df, x="SepalLength", y="PetalWidth", color="Species")
-st.plotly_chart(data)
