@@ -11,6 +11,8 @@ st.title("Dashboard Streamlit")
 #st.table(data)
 #Affichage des 5 premières lignes du jeu de doonnées
 #st.write(data.head())
+import pandas as pd 
+import altair as alt
 
 #creer un chart altair
 chart = alt.Chart(data).mark_bar().encode(x='SepalLength' , y='SepalWidth')
