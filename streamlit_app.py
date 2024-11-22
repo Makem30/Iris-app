@@ -52,8 +52,8 @@ with st.sidebar:
     # Créer le diagramme sectoriel
 pie_chart = alt.Chart(data).mark_arc().encode(x='SepalLength' , y='SepalWidth').properties(
     title='Distribution des espèces dans le jeu de données Iris',
-    width=400,
-    height=400
+    width=100,
+    height=100
 )
 
 # Afficher le diagramme sectoriel sur Streamlit
