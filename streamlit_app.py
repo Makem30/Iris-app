@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd 
 import altair as alt
-
+import numpy as np
 
 # Charger les données
 data = pd.read_csv('Iris.csv', delimiter=";") 
@@ -59,4 +59,15 @@ pie_chart = alt.Chart(data).mark_arc().encode(x='SepalLength' , y='SepalWidth').
 # Afficher le diagramme sectoriel sur Streamlit
 st.title("Dashboard Iris avec Diagramme Sectoriel")
 st.altair_chart(pie_chart, use_container_width=True)
+
+
+# Sample data (replace with your actual data)
+data = [30, 25, 45]  # Example data representing the sizes of the slices
+labels = ['setosa', 'versicolor', 'virginica']
+
+# Create a pie chart
+plt.pie(data, labels=labels, autopct='%1.1f%%')
+
+# Display the plot in Streamlit
+st.pyplot()
 
