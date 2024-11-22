@@ -61,13 +61,12 @@ st.title("Dashboard Iris avec Diagramme Sectoriel")
 st.altair_chart(pie_chart, use_container_width=True)
 
 
-# Sample data (replace with your actual data)
-data = [30, 25, 45]  # Example data representing the sizes of the slices
-labels = ['setosa', 'versicolor', 'virginica']
-
-# Create a pie chart
-plt.pie(data, labels=labels, autopct='%1.1f%%')
-
-# Display the plot in Streamlit
+# Données à tracer
+labels = 'setosa', 'versicolor', 'virginica'
+ 
+# Créer un diagramme circulaire
+plt.pie(data, labels=data, autopct='%1.1f%%')
+ 
+# Afficher le tracé dans Streamlit
 st.pyplot()
 
