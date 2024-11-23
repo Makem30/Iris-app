@@ -68,7 +68,7 @@ donut_chart = alt.Chart(data_aggregated).mark_arc(innerRadius=50).encode(
     color='Species:N',  # Color of the slice (based on 'Species')
     tooltip=['Species:N', 'count:Q']  # Tooltip shows Species and count
 ).properties(
-    title='Distribution of Species in Iris Dataset',
+    title='Distribution des espèces dans la Dataset',
     width=400,
     height=400
 )
