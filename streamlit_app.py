@@ -76,6 +76,40 @@ donut_chart = alt.Chart(data_aggregated).mark_arc(innerRadius=50).encode(
 # 3. Display the chart in Streamlit
 st.altair_chart(donut_chart, use_container_width=True)
 
+#----------------------------------------
+
+# Load your Iris dataset
+data = pd.read_csv('Iris.csv', delimiter=";")
+
+# Sidebar for selecting comparisons
+st.sidebar.header("Flower Comparisons")
+
+# Flower species selection
+species_options = data['Species'].unique().tolist()
+selected_species = st.sidebar.multiselect(
+    "Select Species to Compare:", species_options, default=species_options[:2]
+)
+
+# Feature selection
+feature_options = ['PetalWidth', 'SepalWidth', 'PetalLength', 'SepalLength']
+x_feature = st.sidebar.selectbox("X-axis Feature:", feature_options, index=0)
+y_feature = st.sidebar.selectbox("Y-axis Feature:", feature_options, index=1)
+
+# Filter data based on selected species
+filtered_data = data[data['Species'].isin(selected_species)]
+
+# Create the chart
+chart = alt.Chart(filtered_data).mark_point().encode(
+    x=alt.X(x_feature, scale=alt.Scale(zero=False)),  # Adjust scale if needed
+    y=alt.Y(y_feature, scale=alt.Scale(zero=False)),
+    color='Species:N'
+).properties(
+    title=f"Comparison of {x_feature} vs {y_feature}"
+)
+
+# Display the chart
+st.altair_chart(chart, use_container_width=True)
+
 
 
 
