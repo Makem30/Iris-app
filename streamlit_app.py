@@ -65,7 +65,7 @@ st.altair_chart(pie_chart, use_container_width=True)
 labels = 'SepalLength', 'SepalWidth', 'PetalLength'
  
 # Créer un diagramme circulaire
-plt.pie(data, labels=data, autopct='%1.1f%%')
+plt.pie(data, labels=labels, autopct='%1.1f%%')
  
 # Afficher le tracé dans Streamlit
 st.pyplot()
