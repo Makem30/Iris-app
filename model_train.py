@@ -4,7 +4,7 @@ import pandas as pd
 from tensorflow.keras.utils import to_categorical
 import numpy as np
 
-data = pd.read_csv('iris.data').values
+data = pd.read_csv('Iris.csv', delimiter=";")
 
 rand = np.arange(149)
 np.random.shuffle(rand)
