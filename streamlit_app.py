@@ -90,4 +90,4 @@ if btn:
 		st.image("versicolor.jpg")
 	else:	
 		st.image("verginca.jpg")
-)
+
