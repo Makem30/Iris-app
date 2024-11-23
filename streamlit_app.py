@@ -56,12 +56,6 @@ with st.sidebar:
     st.title('DASHBOARD')
 
 
-chart = alt.Chart(data).mark_point().encode(x='SepalLength' , y='PetalLength').properties(
-    title='Sepal et Petal')
-
-
-st.altair_chart(chart, use_container_width=True)
-
 #----------------------------------------
 
 # chargement de la dataset
