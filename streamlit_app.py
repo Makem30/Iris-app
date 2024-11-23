@@ -65,5 +65,5 @@ st.altair_chart(pie_chart, use_container_width=True)
 
 chart_data = pd.data(np.random.randn(20, 3), columns=["SepalLength", "SepalWidth", "PetalLength"])
 
-st.line_chart(chart_data)
+st.line_chart(chart_data,use_container_width=True)
 
