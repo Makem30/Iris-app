@@ -84,9 +84,9 @@ if btn:
 	pred = labels[np.argmax(pred)]
 	st.subheader(pred)
 
-	if pred=="Iris Setosa":
+	if pred=="Setosa":
 		st.image("setosa.jpg")
-	elif pred=="Iris Versicolour":
+	elif pred=="Versicolour":
 		st.image("versicolor.jpg")
 	else:	
 		st.image("verginca.jpg")
