@@ -45,7 +45,7 @@ import streamlit as st
 # st.write(f"You selected: {option}")
 
 with st.sidebar:
-    st.title('Dashboard')
+    st.title('DASHBOARD')
 
 
 
@@ -78,22 +78,22 @@ st.altair_chart(donut_chart, use_container_width=True)
 
 #----------------------------------------
 
-# Load your Iris dataset
+# chargement de la dataset
 data = pd.read_csv('Iris.csv', delimiter=";")
 
 # Sidebar for selecting comparisons
-st.sidebar.header("Flower Comparisons")
+st.sidebar.header("Comparaison des fleurs")
 
 # Flower species selection
 species_options = data['Species'].unique().tolist()
 selected_species = st.sidebar.multiselect(
-    "Select Species to Compare:", species_options, default=species_options[:2]
+    "Selectionnez les espèces à comparer:", species_options, default=species_options[:2]
 )
 
 # Feature selection
 feature_options = ['PetalWidth', 'SepalWidth', 'PetalLength', 'SepalLength']
-x_feature = st.sidebar.selectbox("X-axis Feature:", feature_options, index=0)
-y_feature = st.sidebar.selectbox("Y-axis Feature:", feature_options, index=1)
+x_feature = st.sidebar.selectbox("X-axe Caractéristiques:", feature_options, index=0)
+y_feature = st.sidebar.selectbox("Y-axe Caractéristiques:", feature_options, index=1)
 
 # Filter data based on selected species
 filtered_data = data[data['Species'].isin(selected_species)]
