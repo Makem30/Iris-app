@@ -20,7 +20,7 @@ col1, col2 = st.columns(2)
 
 # Content for the first column
 with col1:
-    st.header("Column 1")
+    
     chart = alt.Chart(data).mark_bar().encode(x='SepalLength' , y='SepalWidth').properties(
     title='Sepal Histogramme')
 
@@ -33,7 +33,7 @@ with col1:
 
 # Content for the second column
 with col2:
-    st.header("Column 2")
+    
     data_aggregated = data.groupby('Species').size().reset_index(name='count')
             
             # 2. Create the Donut Chart
