@@ -15,8 +15,8 @@ import pandas as pd
 import altair as alt
 
 
-    chart = alt.Chart(data).mark_bar().encode(x='SepalLength' , y='SepalWidth').properties(
-    title='Sepal Histogramme')
+chart = alt.Chart(data).mark_bar().encode(x='SepalLength' , y='SepalWidth').properties(
+title='Sepal Histogramme')
 
 #afficher le chart sur streamlit
 st.altair_chart(chart, use_container_width=True)
@@ -26,11 +26,11 @@ st.altair_chart(chart, use_container_width=True)
 
 
  
-   chart = alt.Chart(data).mark_point().encode(x='SepalLength' , y='PetalLength').properties(
-    title='Sepal et Petal')
+chart = alt.Chart(data).mark_point().encode(x='SepalLength' , y='PetalLength').properties(
+title='Sepal et Petal')
 
 
-    st.write(data.describe())  # Example: Display data description in col2
+st.write(data.describe())  # Example: Display data description in col2
 
 
 import streamlit as st
