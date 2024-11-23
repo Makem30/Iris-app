@@ -61,12 +61,9 @@ st.title("Dashboard Iris avec Diagramme Sectoriel")
 st.altair_chart(pie_chart, use_container_width=True)
 
 
-# Données à tracer
-labels = 'SepalLength', 'SepalWidth', 'PetalLength'
- 
-# Créer un diagramme circulaire
-plt.pie(data, labels=labels, autopct='%1.1f%%')
- 
-# Afficher le tracé dans Streamlit
-st.pyplot()
+
+
+chart_data = pd.data(np.random.randn(20, 3), columns=["SepalLength", "SepalWidth", "PetalLength"])
+
+st.line_chart(chart_data)
 
