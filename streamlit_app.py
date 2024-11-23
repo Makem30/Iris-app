@@ -16,7 +16,7 @@ import altair as alt
 
 
 # Create two columns
-col1, col2 = st.columns([4,2])  
+col1, col2 = st.columns([0.7,0.5])  
 
 # Content for the first column
 with col1:
