@@ -15,6 +15,10 @@ import pandas as pd
 import altair as alt
 
 #creer un chart altair
+col = st.columns((4.5, 2), gap='medium')
+with col[0]:
+    st.markdown('#### Gains/Losses')
+    
 chart = alt.Chart(data).mark_bar().encode(x='SepalLength' , y='SepalWidth').properties(
     title='Sepal Histogramme')
 
@@ -22,6 +26,8 @@ chart = alt.Chart(data).mark_bar().encode(x='SepalLength' , y='SepalWidth').prop
 st.altair_chart(chart, use_container_width=True)
 
 
+with col[1]:
+    st.markdown('#### Total Population')
 chart = alt.Chart(data).mark_point().encode(x='SepalLength' , y='PetalLength').properties(
     title='Sepal et Petal')
 
@@ -111,12 +117,8 @@ chart = alt.Chart(filtered_data).mark_point().encode(
 st.altair_chart(chart, use_container_width=True)
 
 #----------------creation des colonnes----------------------------------------
-col = st.columns((4.5, 2), gap='medium')
-with col[0]:
-    st.markdown('#### Gains/Losses')
 
-with col[1]:
-    st.markdown('#### Total Population')
+
 
 
 
