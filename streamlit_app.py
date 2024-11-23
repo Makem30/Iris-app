@@ -34,32 +34,6 @@ with col1:
 # Content for the second column
 with col2:
     st.header("Column 2")
-    
-    # st.write(data.describe())  # Example: Display data description in col2
-
- 
- # Example: Display data description in col2
-
-
-import streamlit as st
-
-# # Title for the main app
-# st.title("Main App Area")
-
-# # Title for the sidebar
-# st.sidebar.title("Sidebar")
-
-# # Add widgets to the sidebar
-# option = st.sidebar.selectbox(
-#     "Select an option:",
-#     ["Option iris", "Option data", "Option github"]
-# )
-
-# # Display selected option
-# st.write(f"You selected: {option}")
-
-with st.sidebar:
-    st.title('DASHBOARD')
 data_aggregated = data.groupby('Species').size().reset_index(name='count')
         
         # 2. Create the Donut Chart
@@ -75,6 +49,12 @@ height=400
         
         # 3. Display the chart in Streamlit
 st.altair_chart(donut_chart, use_container_width=True)
+    
+
+
+with st.sidebar:
+    st.title('DASHBOARD')
+
 
 
 
