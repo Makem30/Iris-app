@@ -14,7 +14,7 @@ data = pd.read_csv('Iris.csv', delimiter=";")
 import pandas as pd 
 import altair as alt
 
-
+#----------------creation des colonnes----------------------------------------
 # Create two columns
 col1, col2 = st.columns([0.8,0.7],gap="large")  
 
@@ -50,24 +50,12 @@ with col2:
             # 3. Display the chart in Streamlit
     st.altair_chart(donut_chart, use_container_width=True)
     
-
+#----------------------creation de la sidebar--------------------------------------------------
 
 with st.sidebar:
     st.title('DASHBOARD')
 
 
-
-
-import altair as alt
-import streamlit as st
-import pandas as pd
-
-# Assuming 'data' is your Pandas DataFrame (e.g., the Iris dataset)
-
-# 1. Aggregate data for the Donut Chart (if needed)
-# If your data is not already aggregated (e.g., counts per category), 
-# you might need to aggregate it first.
-# For example, if you want to show the distribution of 'Species', you could:
 chart = alt.Chart(data).mark_point().encode(x='SepalLength' , y='PetalLength').properties(
     title='Sepal et Petal')
 
@@ -102,13 +90,13 @@ chart = alt.Chart(filtered_data).mark_point().encode(
     y=alt.Y(y_feature, scale=alt.Scale(zero=False)),
     color='Species:N'
 ).properties(
-    title=f"Comparison of {x_feature} vs {y_feature}"
+    title=f"Comparison de {x_feature} vs {y_feature}"
 )
 
 # Display the chart
 st.altair_chart(chart, use_container_width=True)
 
-#----------------creation des colonnes----------------------------------------
+
 # ... (your previous code for data loading and sidebar) ...
 
 
