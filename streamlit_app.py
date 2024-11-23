@@ -36,7 +36,7 @@ with col2:
    chart = alt.Chart(data).mark_point().encode(x='SepalLength' , y='PetalLength').properties(
     title='Sepal et Petal')
 
-st.altair_chart(chart, use_container_width=True)
+
     st.write(data.describe())  # Example: Display data description in col2
 
 
