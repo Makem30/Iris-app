@@ -63,7 +63,21 @@ st.altair_chart(pie_chart, use_container_width=True)
 
 
 
-chart_data = pd.data(np.random.randn(20, 3), columns=["SepalLength", "SepalWidth", "PetalLength"])
+import plotly.express as px
+import streamlit as st
 
-st.line_chart(chart_data,use_container_width=True)
+st.subheader("Define a custom colorscale")
+df = pd.read_csv('Iris.csv', delimiter=";")
+fig = px.scatter(
+    df,
+    x="SepalWidth",
+    y="SepalLength",
+    color="SepalLength",
+    color_continuous_scale="reds",
+)
 
+tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
+with tab1:
+    st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+with tab2:
+    st.plotly_chart(fig, theme=None, use_container_width=True)
