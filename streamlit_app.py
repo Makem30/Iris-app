@@ -115,5 +115,8 @@ col = st.columns((4.5, 2), gap='medium')
 with col[0]:
     st.markdown('#### Gains/Losses')
 
+with col[1]:
+    st.markdown('#### Total Population')
+
 
 
