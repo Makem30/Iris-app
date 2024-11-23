@@ -25,7 +25,7 @@ st.altair_chart(chart, use_container_width=True)
 
 
 
-
+ 
    chart = alt.Chart(data).mark_point().encode(x='SepalLength' , y='PetalLength').properties(
     title='Sepal et Petal')
 
