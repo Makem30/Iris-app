@@ -62,7 +62,7 @@ st.altair_chart(pie_chart, use_container_width=True)
 
 
 # Données à tracer
-labels = 'setosa', 'versicolor', 'virginica'
+labels = 'SepalLength', 'SepalWidth', 'PetalLength'
  
 # Créer un diagramme circulaire
 plt.pie(data, labels=data, autopct='%1.1f%%')
