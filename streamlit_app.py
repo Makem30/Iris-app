@@ -110,7 +110,10 @@ chart = alt.Chart(filtered_data).mark_point().encode(
 # Display the chart
 st.altair_chart(chart, use_container_width=True)
 
-
+#----------------creation des colonnes----------------------------------------
+col = st.columns((4.5, 2), gap='medium')
+with col[0]:
+    st.markdown('#### Gains/Losses')
 
 
 
