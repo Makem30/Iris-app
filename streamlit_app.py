@@ -5,8 +5,8 @@ import numpy as np
 
 # Charger les données
 data = pd.read_csv('Iris.csv', delimiter=";") 
-#Créer un titre
-st.title("Sepal Histogramme") 
+
+
 #Afficher les données dans un tableau
 #st.table(data)
 #Affichage des 5 premières lignes du jeu de doonnées
@@ -20,9 +20,10 @@ chart = alt.Chart(data).mark_bar().encode(x='SepalLength' , y='SepalWidth').prop
 
 #afficher le chart sur streamlit
 st.altair_chart(chart, use_container_width=True)
-st.title("Sepal et Petal") 
 
-chart = alt.Chart(data).mark_point().encode(x='SepalLength' , y='PetalLength')
+
+chart = alt.Chart(data).mark_point().encode(x='SepalLength' , y='PetalLength').properties(
+    title='Sepal et Petal')
 
 st.altair_chart(chart, use_container_width=True)
 
