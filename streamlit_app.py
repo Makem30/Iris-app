@@ -60,21 +60,21 @@ import streamlit as st
 
 with st.sidebar:
     st.title('DASHBOARD')
-    data_aggregated = data.groupby('Species').size().reset_index(name='count')
-    
-    # 2. Create the Donut Chart
-    donut_chart = alt.Chart(data_aggregated).mark_arc(innerRadius=50).encode(
-        theta='count:Q',  # Angle of the donut slice (based on 'count')
-        color='Species:N',  # Color of the slice (based on 'Species')
-        tooltip=['Species:N', 'count:Q']  # Tooltip shows Species and count
-    ).properties(
-        title='Distribution des espèces dans la Dataset',
-        width=400,
-        height=400
-    )
-    
-    # 3. Display the chart in Streamlit
-    st.altair_chart(donut_chart, use_container_width=True)
+        data_aggregated = data.groupby('Species').size().reset_index(name='count')
+        
+        # 2. Create the Donut Chart
+        donut_chart = alt.Chart(data_aggregated).mark_arc(innerRadius=50).encode(
+            theta='count:Q',  # Angle of the donut slice (based on 'count')
+            color='Species:N',  # Color of the slice (based on 'Species')
+            tooltip=['Species:N', 'count:Q']  # Tooltip shows Species and count
+        ).properties(
+            title='Distribution des espèces dans la Dataset',
+            width=400,
+            height=400
+        )
+        
+        # 3. Display the chart in Streamlit
+        st.altair_chart(donut_chart, use_container_width=True)
 
 
 
