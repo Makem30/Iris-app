@@ -14,24 +14,31 @@ data = pd.read_csv('Iris.csv', delimiter=";")
 import pandas as pd 
 import altair as alt
 
-#creer un chart altair
-col = st.columns((4.5, 2), gap='medium')
-with col[0]:
-    st.markdown('#### Gains/Losses')
-    
-chart = alt.Chart(data).mark_bar().encode(x='SepalLength' , y='SepalWidth').properties(
+# Create two columns
+col1, col2 = st.columns(2)  
+
+# Content for the first column
+with col1:
+    st.header("Column 1")
+    chart = alt.Chart(data).mark_bar().encode(x='SepalLength' , y='SepalWidth').properties(
     title='Sepal Histogramme')
 
 #afficher le chart sur streamlit
 st.altair_chart(chart, use_container_width=True)
+    # st.altair_chart(chart, use_container_width=True)
+    
 
 
-with col[1]:
-    st.markdown('#### Total Population')
-chart = alt.Chart(data).mark_point().encode(x='SepalLength' , y='PetalLength').properties(
+
+# Content for the second column
+with col2:
+    st.header("Column 2")
+   chart = alt.Chart(data).mark_point().encode(x='SepalLength' , y='PetalLength').properties(
     title='Sepal et Petal')
 
 st.altair_chart(chart, use_container_width=True)
+    st.write(data.describe())  # Example: Display data description in col2
+
 
 import streamlit as st
 
@@ -117,6 +124,10 @@ chart = alt.Chart(filtered_data).mark_point().encode(
 st.altair_chart(chart, use_container_width=True)
 
 #----------------creation des colonnes----------------------------------------
+# ... (your previous code for data loading and sidebar) ...
+
+  # Example: Display chart in col1
+
 
 
 
