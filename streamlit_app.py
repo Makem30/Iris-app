@@ -63,12 +63,31 @@ st.altair_chart(pie_chart, use_container_width=True)
 
 
 
-import pandas as pd
-import altair as alt
+import streamlit as st
+from keras.models import load_model 
+import numpy as np 
 
-source = pd.data({"category": [SepalLength, SepalWidth, SepalLength], "value": [1, 2, 3]})
+model = load_model("model.h5")
+labels = np.load("labels.npy") 
 
-alt.Chart(source).mark_arc(innerRadius=50).encode(
-    theta=alt.Theta(field="value", type="quantitative"),
-    color=alt.Color(field="category", type="nominal"),
+st.title("Iris flower prediction app")
+
+a = float(st.number_input("sepal length in cm"))
+b = float(st.number_input("sepal width in cm"))
+c = float(st.number_input("petal length in cm"))
+d = float(st.number_input("petal width in cm"))
+
+btn = st.button("predict")
+
+if btn:
+	pred = model.predict(np.array([a,b,c,d]).reshape(1,-1))
+	pred = labels[np.argmax(pred)]
+	st.subheader(pred)
+
+	if pred=="Iris Setosa":
+		st.image("setosa.jpg")
+	elif pred=="Iris Versicolour":
+		st.image("versicolor.jpg")
+	else:	
+		st.image("verginca.jpg")
 )
