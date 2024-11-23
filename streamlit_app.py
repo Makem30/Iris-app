@@ -66,7 +66,7 @@ st.altair_chart(pie_chart, use_container_width=True)
 import pandas as pd
 import altair as alt
 
-source = pd.data({"category": [SepalLength, SepalWidth, SepalLength], "value": [SepalLength, SepalWidth, SepalLength]})
+source = pd.data({"category": [SepalLength, SepalWidth, SepalLength], "value": [1, 2, 3]})
 
 alt.Chart(source).mark_arc(innerRadius=50).encode(
     theta=alt.Theta(field="value", type="quantitative"),
