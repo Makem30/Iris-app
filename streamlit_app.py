@@ -92,7 +92,7 @@ chart = alt.Chart(data).mark_point().encode(x='SepalLength' , y='PetalLength').p
     title='Sepal et Petal')
 
 
-    st.write(data.describe()) 
+st.write(data.describe()) 
 
 #----------------------------------------
 
